@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <a href="index.html">
+            <img src="438271512_1153332982679758_271480401286059788_n (1).png" alt="Logo" width="150">
+        </a>
+      </div>
+        
+        <div class="burger-menu" onclick="toggleMenu()">
+          <div></div> <!-- Top line of X -->
+          <div></div> <!-- Bottom line of X -->
+        </div>
+        
+        <div class="links">
+            <a href="Dame.html">Dame</a>
+            <a href="#">Herre</a>
+            <a href="#">Accessories</a>
+        </div>
+        
+        <a href="Profil.html">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
+                <path fill="none" d="M0 0h24v24H0z"/>
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+        </a>
+    
+        <div class="cart">
+            <img src="icons8-shopping-bag-50 (1).png" alt="Shopping Bag" width="35" height="35" id="cart-icon">
+            <div id="cart-container" style="display: none;">
+                <h2>Kurv</h2>
+                <ul id="cart-items"></ul>
+                <p>Total: <span id="cart-total">0.00</span> </p>
+                
+                <a href="Kurv.html"><button id="checkout-button">VIDERE TIL KASSEN</button></a>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <main>
+        <div class="title">Kvinder </div>
+
+
+
+
+
+        <div class="filters">
+            <div>
+                <label for="color">Farve:</label>
+                <select id="color">
+                    <option value="">Alle</option>
+                    <option value="Beige">Beige</option>
+                    <option value="Blå">Blå</option>
+                    <option value="Grøn">Grøn</option>
+                    <option value="Sort">Sort</option>
+                    <option value="Hvid">Hvid</option>
+                </select>
+            </div>
+            <div>
+                <label for="size">Størrelses:</label>
+                <select id="size">
+                    <option value="">Alle</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div>
+                <label for="price">Pris:</label>
+                <select id="price">
+                    <option value="">Alle</option>
+                    <option value="0-140">DKK0 - DKK300</option>
+                    <option value="20-50">DKK300 - DKK600</option>
+                    <option value="50-100">DKK600 - DKK100</option>
+                </select>
+            </div>
+        </div>
+       
+
+        
+    <div class="Prodokt-flex-box">
+        <div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Sort skjorte" data-color="Sort" cart-name="LILLY - Sort skjorte" data-size="small" data-price="299.95 " data-image="vare1 (1).jpeg">
+                <a href="PRODUKT1.HTML"><img src="vare1 (1).jpeg" alt="Car 1"></a>
+                <p class="image-text">LILLY - Sort skjorte</p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - sort skjorte ', 299.95 , 'vare1 (1).jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <!-- Add more custom-grid-items here -->
+        </div>
+        <div class="custom-grid-container">
+            <div class="custom-grid-item"  data-name="LILLY - Multifarvet kjole"data-color="Alle" data-size="small" data-price="489.00" data-image="vare2 (1).jpeg">
+                <img src="vare2 (1).jpeg" alt="Car 1">
+                <p class="image-text">LILLY - Multifarvet kjole</p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Multifarvet kjole', 489.00, 'vare2 (1).jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <!-- Add more custom-grid-items here -->
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Beige skjorte" data-color="Beige" data-size="small" data-price="299.00" data-image="vare3.jpeg">
+                <img src="vare3.jpeg" alt="Car 1" >
+                <p class="image-text">LILLY - Beige skjorte </p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Beige skjorte', 299.00, 'vare3.jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+            </div>
+    
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Beige skjorte" data-color="red" data-size="small" data-price="262.00" data-image="vare4 (1) (1).jpeg">
+                <img src="vare4 (1) (1).jpeg" alt="Car 1" >
+                <p class="image-text">ONLY - Sommerkjole  </p>
+                <div class="button-container">
+                    <button class="add-car-button-2">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Beige skjorte', 169.95, 'vare3.jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+            </div>
+        
+            <!-- Add more custom-grid-items here -->
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item"  data-name="Only - Jeans skirt" data-color="Blå" data-size="small" data-price="229.95" data-image="vare5 (1).jpeg">
+                <img src="vare5 (1).jpeg" alt="Car 1">
+                <p class="image-text"> Only - Jeans skirt</p>
+                <div class="button-container">
+                    <button class="add-car-button-2">
+                        <img src="icons8-save-32.png" alt="car 1">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('Only - Jeans skirt', 229.95, 'vare5 (1).jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+        </div>
+            <!-- Add more custom-grid-items here -->
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Top" data-color="Blå" data-size="small" data-price="199.95" data-image="Dameforside.jpg">
+                <img src="Dameforside.jpg" alt="Car 1">
+                <p class="image-text">LILLY - Top</p>
+                <div class="button-container">
+                    <button class="add-car-button-2">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Top', 199.95, 'Dameforside.jpg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+        </div>
+            <!-- Add more custom-grid-items here -->
+        
+
+
+        
+            <!-- Add more custom-grid-items here -->
+        </div>
+
+        <div class="collection">
+            <img src="collection1.jpeg.jpeg" alt="kvinde1" class="kvinde1">
+            <div class="sommertekst">
+            <h4 class="sommer">SOMMER <br> COLLECTION <br> <p class="collectekst">Udforsk vores nye kollektion, designet til solrige dage<br> med varme farver og nuancer, der passer til alle. <br> <br> <br> <button class="button2"> Se mere</button></p></h4></div>
+            
+            <img src="collection2.jpeg.jpeg" alt="strand" class="strand">
+        </div>
+        <div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Stribet Blus" data-color="Grøn" data-size="small" data-price="149.95" data-image="vare7.jpeg">
+                <a href="PRODUKT1.HTML"><img src="vare7.jpeg" alt="Car 1"></a>
+                <p class="image-text">LILLY - Stribet Blus</p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - sort skjorte ', 149.95 , 'vare1 (1).jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <!-- Add more custom-grid-items here -->
+        </div>
+        <div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - 7/8 dele short" data-color="Blå" data-size="small" data-price="259.00" data-image="vare8.jpeg">
+                <img src="vare8.jpeg" alt="Car 1">
+                <p class="image-text">LILLY - 7/8 dele short</p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Multifarvet kjole', 259.00, 'vare2 (1).jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                
+            
+                    
+                  </div>
+        </div>
+            <!-- Add more custom-grid-items here -->
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Vest"data-color="Blå" data-size="small" data-price="299.95" data-image="ikikk.jpeg">
+                <img src="ikikk.jpeg" alt="Car 1">
+                <p class="image-text">LILLY - Vest </p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Beige skjorte', 299.95, 'vare3.jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <!-- Add more custom-grid-items here -->
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Nederdel med print" data-color="Sort" data-size="small" data-price="399.95" data-image="441493361_918130586776598_6699596731303990069_n.jpg">
+                <img src="441493361_918130586776598_6699596731303990069_n.jpg" alt="Car 1">
+                <p class="image-text">LILLY - Nederdel med print </p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Nederdel med print', 399.95, '441493361_918130586776598_6699596731303990069_n.jpg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+
+                </div>
+        </div>
+            <!-- Add more custom-grid-items here -->
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - Skjort med print" data-color="Grøn" data-size="small" data-price="349.00" data-image="vare11.jpeg">
+                <img src="vare11.jpeg" alt="Car 1">
+                <p class="image-text"> LILLY - Skjort med print</p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - Skjort med print', 349.00, 'vare11.jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+        </div>
+            <!-- Add more custom-grid-items here -->
+        </div><div class="custom-grid-container">
+            <div class="custom-grid-item" data-name="LILLY - stribet kjole" data-color="Beige" data-size="small" data-price="499.00" data-image="vare12.jpeg">
+                <img src="vare12.jpeg" alt="Car 1">
+                <p class="image-text">LILLY - stribet kjole</p>
+                <div class="button-container">
+                    <button class="add-car-button">
+                        <img src="icons8-save-32.png" alt="">
+                    </button>
+                    <button class="favorite-button" onclick="addToCartButton('LILLY - stribet kjole', 499.00, 'vare12.jpeg')">
+                        <img src="icons8-shopping-bag-48.png" alt="">
+                    </button>
+                </div>
+        </div>
+            <!-- Add more custom-grid-items here -->
+     </div>
+
+
+    <div>
+    
+    
+     
+
+
+
+    
+
+        
+
+   
+
+        
+    </main>
+    
+    
+
+
+
+
+
+
+<footer class="footer">
+    <div> <h3 class="overskrift">TØJHUSET <P class="footertekst">Adresse: <br> Langgade 21,Tranebjerg <br> 8305, Samsø</P></h3></div>
+
+    <div> <h3 class="overskrift">ÅBNINGSTIDER <P class="footertekst">Man-Fre:10-17:00 kl. <br> Lørdag: 10-14:00 kl.<br> Søndag: 10-15:00 kl.</P></h3></div>
+    
+    <div> 
+        <h3 class="overskrift">SOCIALE MEDIER </h3>
+        <div class="socialemedie">
+        <img src="facebook (1).png.jpeg" alt="facebook" class="facebook">
+        <img src="instagram (1).png.jpeg" alt="instagram" class="instagram"></div>
+    </div>
+
+    <div class="lang">
+        <img src="language.png.jpeg" alt="sprog" class="language">
+        <h4 class="sprog">DANSK</h4>
+        <img src="downarrow.png.jpeg" alt="arrow" class="arrow">
+
+    </div>
+
+</footer>
+
+
+</body>
+<script src="script.js"></script>
+    <script>
+    
+    
+    function addToStorage(storageKey, itemName, itemPrice, itemImage) {
+    let storageItems = JSON.parse(localStorage.getItem(storageKey)) || [];
+    storageItems.push({ name: itemName, price: itemPrice, image: itemImage });
+    localStorage.setItem(storageKey, JSON.stringify(storageItems));
+    
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.add-car-button, .add-car-button-2, .add-car-button-3').forEach(button => {
+        button.addEventListener('click', () => {
+            const itemElement = button.closest('.custom-grid-item');
+            const itemName = itemElement.getAttribute('data-name');
+            const itemPrice = parseFloat(itemElement.getAttribute('data-price')); // Parsing the price as a float
+            const itemImage = itemElement.getAttribute('data-image');
+            addToStorage('wishlist', itemName, itemPrice, itemImage);
+        });
+    });
+
+    document.querySelectorAll('.favorite-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const itemElement = button.closest('.custom-grid-item');
+            const itemName = itemElement.getAttribute('data-name');
+            const itemPrice = parseFloat(itemElement.getAttribute('data-price')); // Parsing the price as a float
+            const itemImage = itemElement.getAttribute('data-image');
+            addToStorage('cart', itemName, itemPrice, itemImage);
+        });
+    });
+});
+
+
+    </script>
+</html>

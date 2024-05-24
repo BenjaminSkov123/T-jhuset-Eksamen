@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="438271512_1153332982679758_271480401286059788_n (1).png" alt="Logo" width="150">
+    </a>
+  </div>
+    
+    <div class="burger-menu" onclick="toggleMenu()">
+      <div></div> <!-- Top line of X -->
+      <div></div> <!-- Bottom line of X -->
+    </div>
+    
+    <div class="links">
+        <a href="Dame.html">Dame</a>
+        <a href="#">Herre</a>
+        <a href="#">Accessories</a>
+    </div>
+    
+    <a href="Profil.html">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+    </a>
+
+    <div class="cart">
+        <a href="Kurv.html"><img src="icons8-shopping-bag-50 (1).png" alt="Shopping Bag" width="35" height="35" id="cart-icon"></a>
+        <div id="cart-container" style="display: none;">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: <span id="cart-total">0.00</span> DKK</p>
+            
+            <a href="Kurv.html"><button id="checkout-button">VIDERE TIL KASSEN</button></a>
+        </div>
+    </div>
+</header>
+<main>
+  <div class="new-box">
+    <div class="new-content" id="content1">
+      <div id="opbevaringsdiv" class=""></div>
+    </div>
+    <div class="new-content" id="content2">
+        <div id="favoritesList" class="wishlist-container"></div>
+    </div>
+    <div class="new-button-container">
+        <button onclick="showContent(1)">Kurv</button>
+        <button onclick="showContent(2)">Favorite <img src="icons8-save-32.png" class="new-favorite-icon-cart"></button>
+    </div>
+</div>
+    
+    
+
+
+</main>
+
+
+
+
+
+</body>
+<script src="script.js"></script>
+<script>
+
+function displayWishlist() {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    
+    let favoritesList = document.getElementById('favoritesList');
+    favoritesList.innerHTML = '';
+
+    if (wishlist.length === 0) {
+        favoritesList.innerHTML = '<p>Du har ingen gemte varer</p>';
+        return;
+    }
+
+    wishlist.forEach((item, index) => {
+        let itemElement = document.createElement('div');
+        itemElement.className = 'wishlist-item';
+
+        itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="wishlist-image">
+            <p class="wishlist-name">${item.name}</p>
+            
+            <button id="remove-button" onclick="removeFromWishlist(${index})">X</button>
+        `;
+
+        favoritesList.appendChild(itemElement);
+    });
+}
+
+function removeFromWishlist(index) {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    wishlist.splice(index, 1);
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    displayWishlist();
+}
+
+document.addEventListener('DOMContentLoaded', displayWishlist);
+
+function displayCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let opbevaringsdiv = document.getElementById('opbevaringsdiv');
+    opbevaringsdiv.innerHTML = '';
+
+    if (cart.length === 0) {
+        opbevaringsdiv.innerHTML = '<p> Du har ikke noget i kurven.</p>';
+        return;
+    }
+
+    cart.forEach((item, index) => {
+        let itemElement = document.createElement('div');
+        itemElement.className = 'cart-item';
+
+        itemElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="cart-image">
+            <p class="cart-name">${item.name}</p>
+            <p class="cart-price">${item.price} DKK</p>
+            <button id="remove-button" onclick="removeFromCart(${index})">X</button>
+        `;
+
+        opbevaringsdiv.appendChild(itemElement);
+    });
+}
+
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCart();
+}
+
+document.addEventListener('DOMContentLoaded', displayCart);
+  // Calculate and display the total
+  let totalPrice = calculateTotal(wishlist);
+    let totalElement = document.getElementById('wishlistTotal');
+    totalElement.innerHTML = `Total: ${totalPrice.toFixed(2)} DKK`; // toFixed(2) for two decimal places
+
+
+
+</script>
+</html>

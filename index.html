@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+  
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="438271512_1153332982679758_271480401286059788_n (1).png" alt="Logo" width="150">
+    </a>
+  </div>
+    
+    <div class="burger-menu" onclick="toggleMenu()">
+      <div></div> <!-- Top line of X -->
+      <div></div> <!-- Bottom line of X -->
+    </div>
+    
+    <div class="links">
+        <a href="Dame.html">Dame</a>
+        <a href="#">Herre</a>
+        <a href="#">Accessories</a>
+    </div>
+    
+    <a href="Profil.html">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
+            <path fill="none" d="M0 0h24v24H0z"/>
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+    </a>
+
+    <div class="cart">
+      <a href="Kurv.html"><img src="icons8-shopping-bag-50 (1).png" alt="Shopping Bag" width="35" height="35" id="cart-icon"></a>
+      <div id="cart-container" style="display: none;">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: <span id="cart-total">0.00</span> DKK</p>
+            
+            <a href="Kurv.html"><button id="checkout-button">Checkout</button></a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+  <div class="image-container">
+    <a href="Dame.html"><div class="T-shirt"><p> T-shirt</p></div></a>
+    <a href="#"><div class="Shorts"><p>Shorts</p></div></a>
+  </div>
+  
+  <div class="Udvalg-box">
+    <p class="Udvalg-text">Udvalg</p>
+    <div class="Udvalg">
+      <div class="kvindehvid"><img src="udvalg1.jpeg" alt=""></div>
+      <div class="Fyrishorts"><img src="udvalg22.jpg" alt=""></div>
+      <div class="kvindegrøn"><img src="udvalg3.jpeg" alt=""></div>
+      <div class="langhvidtrøje"><img src="udvalgmand.jpg" alt=""></div>
+    </div>
+  </div>
+
+  <div class="Udvalg-box-2">
+    <a href="Dame.html"><div class="Kvinder">Kvinder</div></a>
+    <a href="#"><div class="Mænd">Mænd</div></a>
+    <a href=""><div class="ACCESORIES">ACCESORIES</div></a>
+
+
+  </div>
+
+
+
+  <div class="Udvalg-box-3">
+    <div class="SOMMER">SOMMER</div>
+    <div class="COLLECTION">COLLECTION</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+<footer class="footer">
+  <div> <h3 class="overskrift">TØJHUSET <P class="footertekst">Adresse: <br> Langgade 21,Tranebjerg <br> 8305, Samsø</P></h3></div>
+
+  <div> <h3 class="overskrift">ÅBNINGSTIDER <P class="footertekst">Man-Fre:10-17:00 kl. <br> Lørdag: 10-14:00 kl.<br> Søndag: 10-15:00 kl.</P></h3></div>
+  
+  <div> 
+      <h3 class="overskrift">SOCIALE MEDIER </h3>
+      <div class="socialemedie">
+      <img src="facebook (1).png.jpeg" alt="facebook" class="facebook">
+      <img src="instagram (1).png.jpeg" alt="instagram" class="instagram"></div>
+  </div>
+
+  <div class="lang">
+      <img src="language.png.jpeg" alt="sprog" class="language">
+      <h4 class="sprog">DANSK</h4>
+      <img src="downarrow.png.jpeg" alt="arrow" class="arrow">
+
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <a href="index.html">
+            <img src="438271512_1153332982679758_271480401286059788_n (1).png" alt="Logo" width="150">
+        </a>
+      </div>
+        
+        <div class="burger-menu" onclick="toggleMenu()">
+          <div></div> <!-- Top line of X -->
+          <div></div> <!-- Bottom line of X -->
+        </div>
+        
+        <div class="links">
+            <a href="Dame.html">Dame</a>
+            <a href="#">Herre</a>
+            <a href="#">Accessories</a>
+        </div>
+        
+        <a href="Profil.html">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
+                <path fill="none" d="M0 0h24v24H0z"/>
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+        </a>
+    
+        <div class="cart">
+            <a href="Kurv.html"><img src="icons8-shopping-bag-50 (1).png" alt="Shopping Bag" width="35" height="35" id="cart-icon"></a>
+        
+            </div>
+        </div>
+    </header>
+
+    <main>
+      <div class="searchall">
+        <div class="search">
+            <h3 class="sovarer">SØG</h3>
+            <img src="search1.png" alt="soeg" class="soeg">
+        </div>
+    </div>
+
+    <div class="slider-panel" id="sliderPanel" style="display: none; float: right;">
+        <div class="container">
+            <h1>STØRRELSESGUIDE</h1>
+            <div class="form-group">
+                <label for="height">INDTAST DIN HØJDE:</label>
+                <select id="height" name="height">
+                    <option value="150">150</option>
+                    <option value="155">155</option>
+                    <option value="160">160</option>
+                    <option value="165">165</option>
+                    <option value="170">170</option>
+                    <option value="175">175</option>
+                    <option value="180">180</option>
+                    <option value="185">185</option>
+                    <option value="190">190</option>
+                    <option value="195">195</option>
+                    <option value="200">200</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="weight">INDTAST DIN VÆGT:</label>
+                <select id="weight" name="weight">
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                    <option value="60">60</option>
+                    <option value="65">65</option>
+                    <option value="70">70</option>
+                    <option value="75">75</option>
+                    <option value="80">80</option>
+                    <option value="85">85</option>
+                    <option value="90">90</option>
+                    <option value="95">95</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fit_preference">Fit Preference:</label>
+                <div class="slider-container">
+                    <input type="range" id="fit_preference" name="fit_preference" min="0" max="2" step="1">
+                    <div class="slider-labels">
+                        <span>Tight</span>
+                        <span>Regular</span>
+                        <span>Loose</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="calculateSize()">Calculate Size</button>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+</div>
+
+
+<main class="produktmini">
+   
+
+    <div class="billeder">
+        <img src="vare1 (1).jpeg" alt="storbillede" class="storbilled">
+
+        <div class="vertical"></div>
+
+        <div class="images">
+            <img src="441520369_921733389749651_5482450245388665749_n.jpg" alt="produkt2" class="miniprodukter">
+            <img src="441518505_921733469749643_1933844759859093312_n.jpg" alt="produkt3"class="miniprodukter">
+            <img src="FLIPO.jpg" alt="produkt4"class="miniprodukter4">
+
+        </div>
+
+    </div>
+</main>
+
+<div class="information">
+    <div class="info">
+        <h5>Sort skjorte fra LILLY  <p class="infotext">299,00 DKK <br><br> LOOSE FIT - KORT LÆNGDE - MELLEM ÆRMER <br><br></p></h5>
+    </div>
+
+    <div class="size">
+        <div class="farver">
+        <p class="infotext">Farve: Sort</p>
+        <div class="sorthvid">
+            <div class="sort"></div>
+        </div>
+    </div>
+    <div class="sizenumber">
+        <h4 class="box"> XS</h4>
+        <h4 class="box"> S</h4>
+        <h4 class="box"> M</h4>
+    </div>
+
+    <div class="sizesecond">
+            <h4 class="box"> L</h4>
+            <h4 class="box"> XL</h4>
+
+        
+    </div>
+        <div class="yellow">
+            <button class="find" id="toggleButton" onclick="toggleSliderPanel()">FIND DIN STØRRELSE</button>
+            <div class="slider-panel" id="sliderPanel">
+    
+</div>
+
+            <div class="line"></div>
+            <h6>STØRRELSESVEJLEDNING</h6>
+
+        </div>
+        <div class="kurvtil"><button class="tilfoej">TILFØJ TIL KURVEN</button>
+
+
+        
+        
+    </div>
+</div>
+
+
+<div class="down-section">
+        <div class="horizontalline"></div>
+        <p class="maoske-text"> Måske noget du synes op?</p>
+        <div class="fotos">
+            <img src="vare4 (1) (1).jpeg" alt="mini" class="minifotos">
+            <img src="Dameforside.jpg" alt="mini" class="minifotos">
+            <img src="produkt2 (1).jpg" alt="mini" class="minifotos">
+            <img src="mini5.jpg" alt="mini" class="minifotos">
+        </div>
+        <div class="horizontalline"></div>
+    </div>
+
+
+    <footer class="footer">
+      <div> <h3 class="overskrift">TØJHUSET <P class="footertekst">Adresse: <br> Langgade 21,Tranebjerg <br> 8305, Samsø</P></h3></div>
+  
+      <div> <h3 class="overskrift">ÅBNINGSTIDER <P class="footertekst">Man-Fre:10-17:00 kl. <br> Lørdag: 10-14:00 kl.<br> Søndag: 10-15:00 kl.</P></h3></div>
+      
+      <div> 
+          <h3 class="overskrift">SOCIALE MEDIER </h3>
+          <div class="socialemedie">
+          <a href="https://www.facebook.com/Tojhuset"><img src="facebook (1).png.jpeg" alt="facebook" class="facebook"></a>
+          <img src="instagram (1).png.jpeg" alt="instagram" class="instagram"></div>
+      </div>
+  
+      <div class="lang">
+          <img src="language.png.jpeg" alt="sprog" class="language">
+          <h4 class="sprog">DANSK</h4>
+          <img src="downarrow.png.jpeg" alt="arrow" class="arrow">
+  
+      </div>
+
+  </footer>
+    
+
+</body>
+<script src="script.js"></script>
+<script>
+
+    
+</script>
+</html>
